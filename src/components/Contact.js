@@ -5,7 +5,7 @@ const Contact = ({ users }) => (
     < div className="Contact" >
         <img className="avatar" src="https://randomuser.me/api/portraits/men/68.jpg" alt="" />
         <div>
-            <h2 className="name">{users.name}</h2>
+            <h3 className="name">{users.name}</h3>
             <div className="status">
                 <div className={users.online ? "status-online" : "status-offline"}></div>
                 <p className="status-text">{users.online ? "Online" : "Offline"}</p>
