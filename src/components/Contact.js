@@ -3,7 +3,7 @@ import './Contact.css';
 
 const Contact = ({ users }) => (
     < div className="Contact" >
-        <img className="avatar" src="https://randomuser.me/api/portraits/men/68.jpg" alt="" />
+        <img className="avatar" src={users.picture} alt="" />
         <div>
             <h3 className="name">{users.name}</h3>
             <div className="status">
