@@ -25,9 +25,7 @@ const usersFromApi = [
 function App() {
   return (
     <div className="App">
-      {usersFromApi.map((user) => (
-        <Contact key={user.id} users={user} />
-      ))}
+      {usersFromApi.map((user) => (<Contact key={user.id} online={user.online} name={user.name} picture={user.picture} />))}
     </div>
   );
 }
