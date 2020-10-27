@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 const Contact = ({ connected, name, picture }) => {
     const [online, setOnline] = useState(connected)
 
+
     return (
         < div className="Contact" >
             <img className="avatar" src={picture} alt="" />
@@ -25,7 +26,7 @@ Contact.propTypes = {
     // firstName: PropTypes.string.isRequired,
     // lastName: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    online: PropTypes.bool.isRequired
+    connected: PropTypes.bool.isRequired
 
 };
 
