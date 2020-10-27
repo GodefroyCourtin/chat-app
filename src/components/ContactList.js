@@ -5,38 +5,38 @@ const usersFromApi = [
     {
         id: 1,
         name: "Jean-Michel",
-        online: true,
+        connected: true,
         picture: "https://randomuser.me/api/portraits/men/68.jpg"
     },
     {
         id: 2,
         name: "Michelle",
-        online: false,
+        connected: false,
         picture: "https://randomuser.me/api/portraits/women/70.jpg"
     },
     {
         id: 3,
         name: "Mickael",
-        online: true,
+        connected: false,
         picture: "https://randomuser.me/api/portraits/men/56.jpg"
     },
     {
         id: 4,
         name: "Eve",
-        online: true,
+        connected: false,
         picture: "https://randomuser.me/api/portraits/women/55.jpg"
     },
     {
         id: 5,
         name: "Michel",
-        online: true,
+        connected: true,
         picture: "https://randomuser.me/api/portraits/men/16.jpg"
     }
 ];
 
 const ContactList = () => (
     <div className="ContactList">
-        {usersFromApi.map((user) => (<Contact key={user.id} online={user.online} name={user.name} picture={user.picture} />))}
+        {usersFromApi.map((user) => (<Contact key={user.id} connected={user.connected} name={user.name} picture={user.picture} />))}
     </div>
 )
 
