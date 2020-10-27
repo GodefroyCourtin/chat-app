@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Contact from "./Contact";
 
 const usersFromApi = [
@@ -31,13 +31,24 @@ const usersFromApi = [
         name: "Michel",
         connected: true,
         picture: "https://randomuser.me/api/portraits/men/16.jpg"
+    },
+    {
+        id: 65,
+        name: "Pat",
+        connected: false,
+        picture: "https://randomuser.me/api/portraits/men/2.jpg"
     }
 ];
 
-const ContactList = () => (
-    <div className="ContactList">
-        {usersFromApi.map((user) => (<Contact key={user.id} connected={user.connected} name={user.name} picture={user.picture} />))}
-    </div>
-)
+const ContactList = () => {
+    const [users, setUsers] = useState(usersFromApi)
+    return (
+        (
+            <div className="ContactList">
+                {usersFromApi.map((user) => (<Contact key={user.id} connected={user.connected} name={user.name} picture={user.picture} />))}
+            </div>
+        )
+    )
+}
 
 export default ContactList;
