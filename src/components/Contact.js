@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
 import PropTypes from 'prop-types';
 
 
-const Contact = ({ online, name, picture }) => (
-    < div className="Contact" >
-        <img className="avatar" src={picture} alt="" />
-        <div>
-            <h3 className="name">{name}</h3>
-            <div className="status">
-                <div className={online ? "status-online" : "status-offline"}></div>
-                <p className="status-text">{online ? "Online" : "Offline"}</p>
+const Contact = ({ connected, name, picture }) => {
+    const [online, setOnline] = useState(connected)
+
+    return (
+        < div className="Contact" >
+            <img className="avatar" src={picture} alt="" />
+            <div>
+                <h3 className="name">{name}</h3>
+                <div className="status" onClick={() => { setOnline(!online) }}>
+                    <div className={online ? "status-online" : "status-offline"} ></div>
+                    <p className="status-text" >{online ? "Online" : "Offline"} </p>
+                </div>
             </div>
-        </div>
-    </div >
-)
+        </div >
+    )
+}
 
 Contact.propTypes = {
     picture: PropTypes.string.isRequired,
